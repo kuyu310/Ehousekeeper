@@ -59,6 +59,7 @@
 		E49CDD8A1E6FB291006341FA /* BabyRhythm.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD7F1E6FB291006341FA /* BabyRhythm.m */; };
 		E49CDD8B1E6FB291006341FA /* BabySpeaker.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD811E6FB291006341FA /* BabySpeaker.m */; };
 		E49CDD8C1E6FB291006341FA /* BabyToy.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD831E6FB291006341FA /* BabyToy.m */; };
+		E49FAE461E7134F5009CCDEA /* WXBlutoochComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49FAE451E7134F5009CCDEA /* WXBlutoochComponent.swift */; };
 		E4AF1F9B1E6663B000C587DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1F9A1E6663B000C587DE /* AppDelegate.swift */; };
 		E4AF1F9D1E6663B000C587DE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1F9C1E6663B000C587DE /* MainViewController.swift */; };
 		E4AF1FA01E6663B000C587DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4AF1F9E1E6663B000C587DE /* Main.storyboard */; };
@@ -159,6 +160,7 @@
 		E49CDD811E6FB291006341FA /* BabySpeaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabySpeaker.m; sourceTree = "<group>"; };
 		E49CDD821E6FB291006341FA /* BabyToy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyToy.h; sourceTree = "<group>"; };
 		E49CDD831E6FB291006341FA /* BabyToy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyToy.m; sourceTree = "<group>"; };
+		E49FAE451E7134F5009CCDEA /* WXBlutoochComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXBlutoochComponent.swift; sourceTree = "<group>"; };
 		E4AF1F971E6663B000C587DE /* Ehousekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ehousekeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4AF1F9A1E6663B000C587DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4AF1F9C1E6663B000C587DE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 				E48FE8AB1E6828F7004A2715 /* WXImgLoaderDefaultImpl.h */,
 				E48FE8AC1E6828F7004A2715 /* WXImgLoaderDefaultImpl.m */,
 				E48FE8AD1E6828F7004A2715 /* WXMapComponent.swift */,
+				E49FAE451E7134F5009CCDEA /* WXBlutoochComponent.swift */,
 			);
 			path = extend;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				E48FE9C71E6954F9004A2715 /* GuideViewController.swift in Sources */,
 				E48FE7B61E6736FD004A2715 /* UpImageDownTextButton.swift in Sources */,
 				E48FE8AE1E6828F7004A2715 /* WXEventModule.m in Sources */,
+				E49FAE461E7134F5009CCDEA /* WXBlutoochComponent.swift in Sources */,
 				E48FE8B21E6828F7004A2715 /* WXMapComponent.swift in Sources */,
 				E49CDD8A1E6FB291006341FA /* BabyRhythm.m in Sources */,
 				E49CDD891E6FB291006341FA /* BabyPeripheralManager.m in Sources */,

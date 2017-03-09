@@ -1,24 +1,20 @@
 //
-//  ViewController.swift
-//  E-housekeeper
-//
-//  Created by limeng on 2017/3/1.
+//  WXBlutoochComponent.swift
+//  Ehousekeeper
+//  微信的蓝牙组件
+//  Created by limeng on 2017/3/9.
 //  Copyright © 2017年 limeng. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
 
-    var instance:WXSDKInstance?;
-    var weexView = UIView()
-    var weexHeight:CGFloat?;
-    var top:CGFloat?;
-    var url:URL?;
+
+class WXBlutoochComponent: WXComponent{
     
     let baby = BabyBluetooth.share();
     let testPeripleralName = "JDY-08";
-    
     let characteristicName = "FEE7"
     
     let DescriptorNameForWrite = "FEC7"
@@ -26,51 +22,41 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
     
     let channelOnPeropheral = "channelOnPeropheral"
     let channelOnCharacteristic = "channelOnCharacteristic"
-
+    
+   
+    
     var currPeripheral :CBPeripheral?
     var currcharacteristic : CBCharacteristic?
     var services = [NSMutableArray]()
     
+    //这是爆漏给js的标签选项
+    override init(ref: String, type: String, styles: [AnyHashable : Any]?, attributes: [AnyHashable : Any]? = nil, events: [Any]?, weexInstance: WXSDKInstance) {
+        super.init(ref: ref, type: type, styles: styles, attributes: attributes, events: events, weexInstance: weexInstance);
+       
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-//      self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+    
+    
+    
+    
+    
+//    复位蓝牙
+    func restartBle(){
+        //停止之前的连接
+        baby?.cancelAllPeripheralsConnection()
+        //设置委托后直接可以使用，无需等待CBCentralManagerStatePoweredOn状态。
+        baby?.scanForPeripherals().begin()
         
-//        render()
-//搜索蓝牙设备
-        DiscoverToPeripherals()
-//        BabyDelegateForPeripheralServer()
-//        writeValue()
-//        
-        
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-//        baby?.cancelAllPeripheralsConnection()
-//        baby?.scanForPeripherals().begin()
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-  
-    }
-
-
-    deinit {
-        if instance != nil {
-            instance!.destroy()
-        }
-    }
-    // 停止扫描服务
+// 停止扫描服务
     func CancelScan(){
-        
+       
         baby?.cancelScan()
     }
-
-//  发现蓝牙设备
-    func DiscoverToPeripherals(){
+ 
+    //  发现蓝牙设备 实例方法
+  func DiscoverToPeripherals(){
         //设置查找Peripherals的规则
         baby?.setFilterOnDiscoverPeripherals { (name, adv, RSSi) -> Bool in
             if let name = adv?["kCBAdvDataLocalName"] as? String {
@@ -86,7 +72,6 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         baby?.setFilterOnConnectToPeripherals { (name, adv, RSSI) -> Bool in
             if let name = adv?["kCBAdvDataLocalName"] as? String {
                 if (name == self.testPeripleralName){
-                    self.CancelScan()
                     return true;
                 }
                 
@@ -96,16 +81,16 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         
         //        找到Peripherals的block
         baby?.setBlockOnDiscoverToPeripherals { (centralManager, peripheral, adv, RSSI) in
-            
+           
         };
         
         //        连接Peripherals成功的block
         baby?.setBlockOnConnected { (centralManager, peripheral) in
             print("connect on :\(peripheral?.name)");
-            //            把外设传出来
+//            把外设传出来
             self.currPeripheral = peripheral
-            //            停止扫描
-            
+//            停止扫描
+            self.CancelScan()
             
             SVProgressHUD.showInfo(withStatus: peripheral?.name)
             
@@ -114,39 +99,16 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         //        设置查找服务的block
         baby?.setBlockOnDiscoverServices { (p, error) in
             print("discover services:\(p?.services)");
-            
-            
         }
         //        设置查找到Characteristics的block
         baby?.setBlockOnDiscoverCharacteristics { (p, s, err) in
             print("discover characteristics:\(s?.characteristics) on uuid \(s?.uuid.uuidString)");
-            
-            for c in (s?.characteristics!)! {
-                
-                if c.uuid.uuidString == self.DescriptorNameForNodify{
-                    
-                    p?.setNotifyValue(true, for: c)
-                    
-                    
-                }
-                
-                
-                
-                if c.uuid.uuidString == self.DescriptorNameForWrite{
-                    
-                    self.currcharacteristic = c
-                    self.writeValue()
-                }
-            }
-
-            
-            
         }
         
         baby?.scanForPeripherals().enjoy();
         
     }
- 
+//    设置发现设备的服务和特征委托
     func BabyDelegateForPeripheralServer(){
         
         
@@ -158,8 +120,8 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             print("外设名称:\(peripheral?.name)")
         })
         
-        
-        
+  
+
         
         //设置设备连接失败的委托
         baby?.setBlockOnFailToConnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
@@ -167,21 +129,21 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             
         })
         
-        //设置设备断开连接的委托
+          //设置设备断开连接的委托
         baby?.setBlockOnDisconnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
             print("设备：断开连接 \(peripheral?.name)");
         })
         
         
-        //设置发现设备的Services的委托
+      //设置发现设备的Services的委托
         baby?.setBlockOnDiscoverServicesAtChannel(channelOnPeropheral, block: { (peripheral, error) in
-            //            rhythm.beats()  //建立心跳
+//            rhythm.beats()  //建立心跳
         })
         
         //设置发现设service的Characteristics的委托
-        
+    
         baby?.setBlockOnDiscoverCharacteristicsAtChannel(channelOnPeropheral, block: { (peripheral, service, error) -> Void in
-            //            print("===service name:%@",service?.uuid);
+//            print("===service name:%@",service?.uuid);
             
             for c in (service?.characteristics!)! {
                 
@@ -202,21 +164,21 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             
             
             
-            
+
         })
         
         //设置读取characteristics的委托
         baby?.setBlockOnReadValueForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
-            //            将特征付对象传出去
-            
+//            将特征付对象传出去
+           
             
             print("characteristic name:%@ value is:%@",characteristic?.uuid as Any,characteristic?.value)
         })
         
         //设置发现characteristics的descriptors的委托
-        baby?.setBlockOnDiscoverDescriptorsForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
+         baby?.setBlockOnDiscoverDescriptorsForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
             print("===characteristic name:%@",characteristic?.service.uuid);
-        })
+         })
         
         //设置beats break委托
         rhythm.setBlockOnBeatsBreak { (bry) in
@@ -224,20 +186,20 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         }
         
         //设置beats over委托
-        rhythm.setBlockOnBeatsOver { (bry) in
+         rhythm.setBlockOnBeatsOver { (bry) in
             NSLog("setBlockOnBeatsOver call");
         }
         
         let scanForPeripheralsWithOptions = ["CBCentralManagerScanOptionAllowDuplicatesKey" : 1]
         
-        
-        
+     
+            
         let connectOptions = ["CBConnectPeripheralOptionNotifyOnConnectionKey" : 1,
-                              "CBConnectPeripheralOptionNotifyOnDisconnectionKey":1,
-                              "CBConnectPeripheralOptionNotifyOnNotificationKey":1];
+            "CBConnectPeripheralOptionNotifyOnDisconnectionKey":1,
+            "CBConnectPeripheralOptionNotifyOnNotificationKey":1];
         
         
-        
+       
         
         baby?.setBabyOptionsAtChannel(channelOnPeropheral, scanForPeripheralsWithOptions: scanForPeripheralsWithOptions, connectPeripheralWithOptions: connectOptions, scanForPeripheralsWithServices: nil, discoverWithServices: nil, discoverWithCharacteristics: nil)
         
@@ -250,56 +212,15 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         
         
     }
-    func writeValue(){
-        
-        
-        
-        BabyToy.writeValue(self.currPeripheral, characteristic: self.currcharacteristic)
-        
-    }
     
-    
-    
-    
-    
-    func render(){
-        if instance != nil {
-            instance!.destroy()
-        }
-        instance = WXSDKInstance();
-        instance!.viewController = self
-        let width = self.view.frame.size.width
+    func writeValue(s:String){
         
-        instance!.frame = CGRect(x: 0, y: NavigationH, width: width, height: self.view.frame.size.height)
-        weak var weakSelf:MainViewController? = self
-        
-       
-        instance?.onCreate = {
-            (view:UIView?)-> Void in
-            weakSelf!.weexView.removeFromSuperview()
-            weakSelf!.weexView = view!;
-            weakSelf!.view.addSubview(self.weexView)
-            UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, weakSelf!.weexView)
-        }
-        
-        instance?.onFailed = {
-            (error:Error?)-> Void in
-            
-            print("faild at error: %@", error!)
-        }
-        
-        instance?.renderFinish = {
-            (view:UIView?)-> Void in
-            print("render finish")
-        }
-        instance?.updateFinish = {
-            (view:UIView?)-> Void in
-            print("update finish")
-        }
-        
-        instance!.render(with: url!, options: ["bundleUrl":String.init(format: "file://%@/bundlejs/", Bundle.main.bundlePath)], data: nil)
-    }
-    
-    
-}
 
+    
+       BabyToy.writeValue(self.currPeripheral, characteristic: self.currcharacteristic)
+        
+    }
+
+    
+
+}

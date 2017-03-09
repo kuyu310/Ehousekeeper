@@ -31,4 +31,7 @@
 //根据UUIDString查找CBCharacteristic
 +(CBCharacteristic *)findCharacteristicFormServices:(NSMutableArray *)services
                                          UUIDString:(NSString *)UUIDString;
+
++(void)writeValue:(CBPeripheral* )currPeripheral
+   characteristic:(CBCharacteristic* )currcharacteristic;
 @end

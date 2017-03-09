@@ -35,6 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WXSDKEngine.initSDKEnvironment()
         // 注册地图组件，高德地图
         WXSDKEngine.registerComponent("map", with: WXMapComponent.self)
+//        WXSDKEngine.registerComponent("ble", with: WXBlutoochComponent.self)
 
         buildKeyWindow()
         

@@ -86,6 +86,20 @@
     return nil;
 }
 
++ (void)writeValue:(CBPeripheral* )currPeripheral
+   characteristic:(CBCharacteristic* )currcharacteristic {
+   
+    Byte byte[]={0xfe,0x01,0x00,0x13,0x75,0x31,0x00,0x11,0x0a,0x00,0x12,0x04,0x38,0x38,0x39,0x39,0x18,0x91,0x4e};
+    
+    NSData *data = [[NSData alloc]initWithBytes:byte length:sizeof(byte)];
+    NSLog(@"new value %@",data);
+   
+    [currPeripheral writeValue:data forCharacteristic:currcharacteristic type:CBCharacteristicWriteWithResponse];
+}
+
+
+
+
 @end
 
 
