@@ -37,15 +37,12 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-//      self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+
         
-//        render()
+        render()
 //搜索蓝牙设备
         DiscoverToPeripherals()
-//        BabyDelegateForPeripheralServer()
-//        writeValue()
-//        
-        
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -122,6 +119,8 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         
         baby?.setBlockOnDisconnect({ (centralManager, peripheral, error) in
             SVProgressHUD.showInfo(withStatus: "设备断开连接：\(peripheral?.name)")
+            self.baby?.autoReconnect(peripheral)
+            SVProgressHUD.showInfo(withStatus: "设备自动重连：\(peripheral?.name)")
         })
         
         //        设置查找服务的block
@@ -144,8 +143,6 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
                     p?.setNotifyValue(true, for: c)
                     
                      }
-                
-                
                 
                 if c.uuid.uuidString == self.DescriptorNameForWrite{
                     
@@ -217,8 +214,6 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
                     
                     
                 }
-                
-                
                 
                 if c.uuid.uuidString == self.DescriptorNameForWrite{
                     

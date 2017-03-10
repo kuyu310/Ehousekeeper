@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -68,6 +69,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        adViewController = ADViewController()
 
         var adImageUrl:String?
+        
+        
+        //Alamofire.request("https://httpbin.org/get")
+        
+        Alamofire.request("https://httpbin.org/get").responseJSON { response in     print(response.request)
+            print(response.response)
+            print(response.data)
+            print(response.result)
+            
+            if let JSON = response.result.value {print("JSON: \(JSON)")} }
+        
+            
+        
 //        //从json文件中加载相关数据
         MainAD.loadADData { (data, error) -> Void in
             if data?.data?.img_name != nil {

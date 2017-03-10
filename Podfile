@@ -3,7 +3,8 @@ use_frameworks!
 target 'Ehousekeeper' do
 pod 'SVProgressHUD'
 # Alamofire 网络库 （4.1.0最低支持iOS8.0,4.0最低支持iOS9.0）
-pod 'Alamofire', '~> 4.4'
+#pod 'Alamofire', '~> 4.0'
+
 # swift解析json库
 pod 'SwiftyJSON'
 #网络图片库
