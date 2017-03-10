@@ -98,7 +98,38 @@
 }
 
 
-
+////订阅一个值
+//+(void)setNotifiy:(BabyBluetooth *)baby
+//       Peripheral:(CBPeripheral* )currPeripheral
+//   characteristic:(CBCharacteristic* )currcharacteristic {
+//    
+// 
+//    if(currPeripheral.state != CBPeripheralStateConnected) {
+//        
+//        return;
+//    }
+//    if (currcharacteristic.properties & CBCharacteristicPropertyNotify ||  currcharacteristic.properties & CBCharacteristicPropertyIndicate) {
+//        
+//        if(currcharacteristic.isNotifying) {
+//            [baby cancelNotify:currPeripheral characteristic:currcharacteristic];
+//            
+//        }else{
+//
+//        [baby notify:currPeripheral
+//          characteristic:currcharacteristic
+//                   block:^(CBPeripheral *peripheral, CBCharacteristic *characteristics, NSError *error) {
+//                       NSLog(@"notify block");
+//                       NSLog(@"new value %@",currcharacteristic.value);
+//                      
+//                   }];
+//        }
+//    }
+//    else{
+//       
+//        return;
+//    }
+//    
+//}
 
 @end
 

@@ -34,4 +34,6 @@
 
 +(void)writeValue:(CBPeripheral* )currPeripheral
    characteristic:(CBCharacteristic* )currcharacteristic;
+
+
 @end

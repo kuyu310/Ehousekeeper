@@ -20,5 +20,6 @@ public extension WXEventModule {
         let controller: MainViewController = MainViewController()
         controller.url = URL.init(string: newUrl)
         weexInstance.viewController.navigationController?.pushViewController(controller, animated:true)
+        
     }
 }

@@ -26,6 +26,7 @@
     dispatch_once(&oneToken, ^{
         share = [[BabyBluetooth alloc]init];
     });
+    
    return share;
 }
 

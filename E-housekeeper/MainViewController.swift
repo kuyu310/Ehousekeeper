@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
 
     var instance:WXSDKInstance?;
@@ -71,6 +72,9 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
 
 //  发现蓝牙设备
     func DiscoverToPeripherals(){
+        
+        let rhythm = BabyRhythm()
+        
         //设置查找Peripherals的规则
         baby?.setFilterOnDiscoverPeripherals { (name, adv, RSSi) -> Bool in
             if let name = adv?["kCBAdvDataLocalName"] as? String {
@@ -86,6 +90,7 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         baby?.setFilterOnConnectToPeripherals { (name, adv, RSSI) -> Bool in
             if let name = adv?["kCBAdvDataLocalName"] as? String {
                 if (name == self.testPeripleralName){
+                     // 停止扫描
                     self.CancelScan()
                     return true;
                 }
@@ -93,6 +98,7 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             }
             return false;
         }
+        
         
         //        找到Peripherals的block
         baby?.setBlockOnDiscoverToPeripherals { (centralManager, peripheral, adv, RSSI) in
@@ -104,16 +110,26 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             print("connect on :\(peripheral?.name)");
             //            把外设传出来
             self.currPeripheral = peripheral
-            //            停止扫描
             
-            
-            SVProgressHUD.showInfo(withStatus: peripheral?.name)
+            SVProgressHUD.showInfo(withStatus: "设备连接成功：\(peripheral?.name)!")
             
             
         };
+        
+        baby?.setBlockOnFailToConnect({ (centralManager, peripheral, error) in
+            SVProgressHUD.showInfo(withStatus: "设备连接失败：\(peripheral?.name)")
+        })
+        
+        baby?.setBlockOnDisconnect({ (centralManager, peripheral, error) in
+            SVProgressHUD.showInfo(withStatus: "设备断开连接：\(peripheral?.name)")
+        })
+        
         //        设置查找服务的block
         baby?.setBlockOnDiscoverServices { (p, error) in
             print("discover services:\(p?.services)");
+            
+            
+             rhythm.beats()
             
             
         }
@@ -127,8 +143,7 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
                     
                     p?.setNotifyValue(true, for: c)
                     
-                    
-                }
+                     }
                 
                 
                 
@@ -142,8 +157,19 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             
             
         }
+        //设置beats break委托
+        rhythm.setBlockOnBeatsBreak { (bry) in
+            print("setBlockOnBeatsBreak call")
+        }
         
-        baby?.scanForPeripherals().enjoy();
+        //设置beats over委托
+        rhythm.setBlockOnBeatsOver { (bry) in
+            print("setBlockOnBeatsOver call")
+        }
+
+        
+        
+        baby?.scanForPeripherals().enjoy()
         
     }
  
@@ -251,13 +277,9 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         
     }
     func writeValue(){
-        
-        
-        
         BabyToy.writeValue(self.currPeripheral, characteristic: self.currcharacteristic)
         
     }
-    
     
     
     
