@@ -10,7 +10,7 @@
 #define Ehousekeeper_Bridging_Header_h
 #import "MJExtension.h"
 #import "SVProgressHUD.h"
-#import "OnboardingViewController.h"
+
 #import "BabyBluetooth.h"
 
 
@@ -31,5 +31,6 @@
 #import "DHLaunchAdPageHUD.h"
 //babyBluetooth
 #import "BabyBluetooth.h"
+#import "MJExtension.h"
 
 #endif /* E_housekeeper_Bridging_Header_h */

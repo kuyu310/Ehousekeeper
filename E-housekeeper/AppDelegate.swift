@@ -1,4 +1,4 @@
-//
+
 //  AppDelegate.swift
 //  E-housekeeper
 //
@@ -69,23 +69,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        adViewController = ADViewController()
 
         var adImageUrl:String?
+       
+        var data :Data?
         
+        Alamofire.request("http://ojjpkscxv.bkt.clouddn.com/AD").responseData {response in
+//            Alamofire.request("http://ojjpkscxv.bkt.clouddn.com/AD").responseData(completionHandler: <#T##(DataResponse<Data>) -> Void#>)
+            switch response.result.isSuccess {
+                
+            case true:
+                let data = response.result.value
+                
+                let path = Bundle.main.path(forResource: "AD", ofType: nil)
+                
+                
+                do {
+                    try data?.write(to: URL(fileURLWithPath: path!), options: .atomic)
+                } catch {
+                    print(error)
+                }
+                
         
-        //Alamofire.request("https://httpbin.org/get")
-        
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in     print(response.request)
-            print(response.response)
-            print(response.data)
-            print(response.result)
+                
+            case false:
+                print(response.result.error)
+            }
             
-            if let JSON = response.result.value {print("JSON: \(JSON)")} }
+            
+            
+            }
         
             
         
 //        //从json文件中加载相关数据
-        MainAD.loadADData { (data, error) -> Void in
-            if data?.data?.img_name != nil {
-                adImageUrl = data!.data!.img_name
+           MjMainAD.loadADData( completion: { (data, error) -> Void in
+            if data?.img_name != nil {
+                adImageUrl = data!.img_name
                 
                 var LaunchAdPage = DHLaunchAdPageHUD.init(frame: ScreenBounds, aDduration: Int(6.0), isConnectNet: true, aDImageUrl: adImageUrl, hideSkipButton: false, launchAdClick: {() -> Void  in
                     UIApplication.shared.openURL(URL.init(string: "https://www.sunyard.com")!)
@@ -93,10 +111,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
                 
             }
-            
             else
             {
-               //后面这里添加连不上网的情况
+                //后面这里添加连不上网的情况
                 
                 var LaunchAdPage = DHLaunchAdPageHUD.init(frame: ScreenBounds, aDduration: Int(6.0), isConnectNet: false, aDImageUrl: adImageUrl, hideSkipButton: false, launchAdClick: {() -> Void  in
                     UIApplication.shared.openURL(URL.init(string: "https://www.sunyard.com")!)
@@ -104,12 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 })
                 
             }
-        }
+        })
 
-    
-       
-        
-        
         
     }
 
@@ -126,19 +139,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func showMainTabbarControllerSucess(_ noti: Notification) {
         let mainViewController = MainViewController()
-        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+//        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
+        
         window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
     }
 
     func showMainTabbarControllerFale() {
         let mainViewController = MainViewController()
-         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+//         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
         window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
     }
     
     func shoMainTabBarController() {
         let mainViewController = MainViewController()
-         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+//         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
         
         
        

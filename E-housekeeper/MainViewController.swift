@@ -313,8 +313,11 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             (view:UIView?)-> Void in
             print("update finish")
         }
-        
-        instance!.render(with: url!, options: ["bundleUrl":String.init(format: "file://%@/bundlejs/", Bundle.main.bundlePath)], data: nil)
+//        http://localhost:8080/bundlejs/index.js
+//        instance!.render(with: url!, options: ["bundleUrl":String.init(format: "file://%@/bundlejs/", Bundle.main.bundlePath)], data: nil)
+          instance!.render(with: url!, options: ["bundleUrl":String.init(format: "http://127.0.0.1:8080/bundlejs/", Bundle.main.bundlePath)], data: nil)
+    
+    
     }
     
     
