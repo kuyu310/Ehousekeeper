@@ -49,7 +49,6 @@
 		E48FE9C31E691D9F004A2715 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = E48FE9C21E691D9F004A2715 /* AD */; };
 		E48FE9C71E6954F9004A2715 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9C61E6954F9004A2715 /* GuideViewController.swift */; };
 		E48FE9CA1E6955CA004A2715 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9C91E6955CA004A2715 /* BaseViewController.swift */; };
-		E48FE9CC1E695683004A2715 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9CB1E695683004A2715 /* SwiftDictModel.swift */; };
 		E49CDD841E6FB291006341FA /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD731E6FB291006341FA /* BabyBluetooth.m */; };
 		E49CDD851E6FB291006341FA /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD751E6FB291006341FA /* BabyCallback.m */; };
 		E49CDD861E6FB291006341FA /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD771E6FB291006341FA /* BabyCentralManager.m */; };
@@ -70,6 +69,11 @@
 		E4AF1FCB1E66AF9C00C587DE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1FCA1E66AF9C00C587DE /* Common.swift */; };
 		E4B25D8A1E7297F700D40AA6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */; };
 		E4B25D8B1E7297F700D40AA6 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4B25DAC1E7852D300D40AA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B25DAB1E7852D300D40AA6 /* LoginViewController.swift */; };
+		E4B25DC31E78693E00D40AA6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */; };
+		E4B25DC41E78693E00D40AA6 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E4B25DDC1E78731300D40AA6 /* NHKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */; };
+		E4B25DEB1E78C7EC00D40AA6 /* security_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4B25DEA1E78C7EC00D40AA6 /* security_logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +147,27 @@
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
+		E4B25DBB1E7868D000D40AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		E4B25DBD1E7868D000D40AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit Tests";
+		};
+		E4B25DC51E78693E00D40AA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -152,6 +177,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E4B25DC41E78693E00D40AA6 /* SnapKit.framework in Embed Frameworks */,
 				E4B25D8B1E7297F700D40AA6 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -213,7 +239,6 @@
 		E48FE9C21E691D9F004A2715 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
 		E48FE9C61E6954F9004A2715 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
 		E48FE9C91E6955CA004A2715 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E48FE9CB1E695683004A2715 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
 		E49CDD721E6FB291006341FA /* BabyBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
 		E49CDD731E6FB291006341FA /* BabyBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
 		E49CDD741E6FB291006341FA /* BabyCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
@@ -249,6 +274,11 @@
 		E4AF1FC81E66682300C587DE /* Ehousekeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ehousekeeper-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4AF1FCA1E66AF9C00C587DE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../E-housekeeper/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		E4B25DAB1E7852D300D40AA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../../E-housekeeper/SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHKeyboard.m; sourceTree = "<group>"; };
+		E4B25DDB1E78731300D40AA6 /* NHKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHKeyboard.h; sourceTree = "<group>"; };
+		E4B25DEA1E78C7EC00D40AA6 /* security_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = security_logo.jpg; sourceTree = "<group>"; };
 		EA98F8BE94136E2A7D53D8AF /* Pods-Ehousekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ehousekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ehousekeeper/Pods-Ehousekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,6 +290,7 @@
 				AEB8B32CC456E288DE8917EA /* Pods_E_housekeeper.framework in Frameworks */,
 				E4B25D8A1E7297F700D40AA6 /* Alamofire.framework in Frameworks */,
 				708A50F62AD7D2AC7448C02A /* Pods_Ehousekeeper.framework in Frameworks */,
+				E4B25DC31E78693E00D40AA6 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +414,7 @@
 		E48FE7991E66CE79004A2715 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				E48FE9CB1E695683004A2715 /* SwiftDictModel.swift */,
+				E4B25DA01E78522F00D40AA6 /* KeyBoard */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -398,6 +429,7 @@
 		E48FE79B1E66CE8A004A2715 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E4B25DAB1E7852D300D40AA6 /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -412,6 +444,7 @@
 		E48FE79D1E66CE97004A2715 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
+				E4B25DEA1E78C7EC00D40AA6 /* security_logo.jpg */,
 				E4016B1A1E6BD7ED00A950E3 /* Images */,
 				E48FE9C21E691D9F004A2715 /* AD */,
 			);
@@ -544,6 +577,7 @@
 		E4AF1F8E1E6663B000C587DE = {
 			isa = PBXGroup;
 			children = (
+				E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */,
 				E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */,
 				E48FE9BB1E68538E004A2715 /* bundlejs */,
 				E48FE7931E66C2A1004A2715 /* 日志 */,
@@ -624,6 +658,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		E4B25DA01E78522F00D40AA6 /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */,
+				E4B25DDB1E78731300D40AA6 /* NHKeyboard.h */,
+			);
+			name = KeyBoard;
+			path = "../../../../E-housekeeper/E-housekeeper/Tools/KeyBoard";
+			sourceTree = "<group>";
+		};
+		E4B25DB01E7868D000D40AA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */,
+				E4B25DBE1E7868D000D40AA6 /* SnapKit Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -643,6 +696,7 @@
 			);
 			dependencies = (
 				E4B25D8D1E7297F700D40AA6 /* PBXTargetDependency */,
+				E4B25DC61E78693E00D40AA6 /* PBXTargetDependency */,
 			);
 			name = Ehousekeeper;
 			productName = "E-housekeeper";
@@ -728,6 +782,10 @@
 					ProductGroup = E4B25D721E7297D200D40AA6 /* Products */;
 					ProjectRef = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = E4B25DB01E7868D000D40AA6 /* Products */;
+					ProjectRef = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -788,6 +846,20 @@
 			remoteRef = E4B25D881E7297D200D40AA6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = E4B25DBB1E7868D000D40AA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4B25DBE1E7868D000D40AA6 /* SnapKit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit Tests.xctest";
+			remoteRef = E4B25DBD1E7868D000D40AA6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -816,6 +888,7 @@
 				E4016B2D1E6BD7ED00A950E3 /* guideMovie1.mov in Resources */,
 				E4016B961E6D2CC500A950E3 /* adImage4.gif in Resources */,
 				E4016B2B1E6BD7ED00A950E3 /* guideImage7.gif in Resources */,
+				E4B25DEB1E78C7EC00D40AA6 /* security_logo.jpg in Resources */,
 				E4016B2A1E6BD7ED00A950E3 /* guideImage6.gif in Resources */,
 				E4AF1FA01E6663B000C587DE /* Main.storyboard in Resources */,
 			);
@@ -905,6 +978,7 @@
 				E49CDD881E6FB291006341FA /* BabyOptions.m in Sources */,
 				E48FE9C11E691D30004A2715 /* MainAD.swift in Sources */,
 				E4016B181E6BD70900A950E3 /* DHGuidePageHUD.m in Sources */,
+				E4B25DDC1E78731300D40AA6 /* NHKeyboard.m in Sources */,
 				E48FE7B51E6736FD004A2715 /* UIView+Extension.swift in Sources */,
 				E48FE7A91E6734D1004A2715 /* Theme.swift in Sources */,
 				E4AF1FCB1E66AF9C00C587DE /* Common.swift in Sources */,
@@ -917,11 +991,11 @@
 				E48FE7B61E6736FD004A2715 /* UpImageDownTextButton.swift in Sources */,
 				E48FE8AE1E6828F7004A2715 /* WXEventModule.m in Sources */,
 				E49FAE461E7134F5009CCDEA /* WXBlutoochComponent.swift in Sources */,
+				E4B25DAC1E7852D300D40AA6 /* LoginViewController.swift in Sources */,
 				E48FE8B21E6828F7004A2715 /* WXMapComponent.swift in Sources */,
 				E49CDD8A1E6FB291006341FA /* BabyRhythm.m in Sources */,
 				E49CDD891E6FB291006341FA /* BabyPeripheralManager.m in Sources */,
 				E48FE8B11E6828F7004A2715 /* WXImgLoaderDefaultImpl.m in Sources */,
-				E48FE9CC1E695683004A2715 /* SwiftDictModel.swift in Sources */,
 				E48FE7B21E6736FD004A2715 /* UIBarButtonItem+Extension.swift in Sources */,
 				E4AF1F9B1E6663B000C587DE /* AppDelegate.swift in Sources */,
 			);
@@ -960,6 +1034,11 @@
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
 			targetProxy = E4B25D8C1E7297F700D40AA6 /* PBXContainerItemProxy */;
+		};
+		E4B25DC61E78693E00D40AA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			targetProxy = E4B25DC51E78693E00D40AA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

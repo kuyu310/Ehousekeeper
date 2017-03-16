@@ -32,5 +32,8 @@
 //babyBluetooth
 #import "BabyBluetooth.h"
 #import "MJExtension.h"
+//安全键盘
+#import "NHKeyboard.h"
+
 
 #endif /* E_housekeeper_Bridging_Header_h */

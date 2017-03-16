@@ -38,10 +38,11 @@ pod 'MJExtension'
 #设备信息
 pod 'DeviceKit', '~> 1.0'
 #用代码轻松auto layout
-#pod 'SnapKit'
+#pod 'SnapKit', '~> 3.2.0'
 #基于CoreBluetooth的封装
 #pod 'BabyBluetooth','~> 0.7.0'
 pod 'WeexSDK'
 pod 'WXDevtool', '0.8.0'
 pod 'SDWebImage', '3.7.5'
+
 end

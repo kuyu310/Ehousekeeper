@@ -139,10 +139,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func showMainTabbarControllerSucess(_ noti: Notification) {
         let mainViewController = MainViewController()
+        
+        let mLoginViewController = LoginViewController()
+        
 //        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
         mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
         
-        window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
+//        window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
+        
+        window!.rootViewController = UINavigationController.init(rootViewController: mLoginViewController)
+        
+        
     }
 
     func showMainTabbarControllerFale() {
