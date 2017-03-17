@@ -6,7 +6,7 @@ class MainTabBarController: AnimationTabBarController, UITabBarControllerDelegat
     fileprivate var adImageView: UIImageView?
     //adImage带有属性观察期，如果外部调用改变了adimage的值，就会触发{}内的操作。
     var adImage: UIImage? {
-        //属性观察者,广告
+        //属性观察者,广告\\
         didSet {
             weak var tmpSelf = self
             adImageView = UIImageView(frame: ScreenBounds)
