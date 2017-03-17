@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "caa8a6ced09e54396d56de8ccdcaa22d"
+build_time: [541695281, 159293000]
+inputs:
+  "/\u6388\u6743\u68D2\u94F6\u4F01\u7BA1\u5BB6/\u94F6\u4F01\u7BA1\u5BB6/E-housekeeper/E-housekeeper/ViewController.swift": !dirty [541670551, 0]
+  "/\u6388\u6743\u68D2\u94F6\u4F01\u7BA1\u5BB6/\u94F6\u4F01\u7BA1\u5BB6/E-housekeeper/E-housekeeper/public/Common.swift": !dirty [541668667, 0]
+  "/\u6388\u6743\u68D2\u94F6\u4F01\u7BA1\u5BB6/\u94F6\u4F01\u7BA1\u5BB6/E-housekeeper/E-housekeeper/AppDelegate.swift": !dirty [541676502, 0]

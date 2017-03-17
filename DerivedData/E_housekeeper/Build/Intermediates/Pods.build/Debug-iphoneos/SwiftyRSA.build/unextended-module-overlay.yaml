@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/授权棒银企管家/银企管家/E-housekeeper/DerivedData/E-housekeeper/Build/Products/Debug-iphoneos/SwiftyRSA/SwiftyRSA.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/授权棒银企管家/银企管家/E-housekeeper/DerivedData/E-housekeeper/Build/Intermediates/Pods.build/Debug-iphoneos/SwiftyRSA.build/unextended-module.modulemap',
+    }]
+  }]
+}

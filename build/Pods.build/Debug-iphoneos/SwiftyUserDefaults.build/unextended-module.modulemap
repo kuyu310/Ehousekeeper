@@ -1,0 +1,10 @@
+framework module SwiftyUserDefaults {
+  umbrella header "SwiftyUserDefaults-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftyUserDefaults.__Swift {
+    exclude header "SwiftyUserDefaults-Swift.h"
+}
