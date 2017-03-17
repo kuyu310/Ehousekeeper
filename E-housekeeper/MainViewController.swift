@@ -42,6 +42,10 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         render()
 //搜索蓝牙设备
         DiscoverToPeripherals()
+        
+        //布局下面的tabbar 
+        
+        
 
     }
 
@@ -170,107 +174,107 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
         
     }
  
-    func BabyDelegateForPeripheralServer(){
-        
-        
-        let rhythm = BabyRhythm()
-        
-        
-        //设置读取characteristics的委托
-        baby?.setBlockOnConnectedAtChannel(channelOnPeropheral, block: { (central, peripheral) in
-            print("外设名称:\(peripheral?.name)")
-        })
-        
-        
-        
-        
-        //设置设备连接失败的委托
-        baby?.setBlockOnFailToConnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
-            print("设备连接失败\(peripheral?.name)")
-            
-        })
-        
-        //设置设备断开连接的委托
-        baby?.setBlockOnDisconnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
-            print("设备：断开连接 \(peripheral?.name)");
-        })
-        
-        
-        //设置发现设备的Services的委托
-        baby?.setBlockOnDiscoverServicesAtChannel(channelOnPeropheral, block: { (peripheral, error) in
-            //            rhythm.beats()  //建立心跳
-        })
-        
-        //设置发现设service的Characteristics的委托
-        
-        baby?.setBlockOnDiscoverCharacteristicsAtChannel(channelOnPeropheral, block: { (peripheral, service, error) -> Void in
-            //            print("===service name:%@",service?.uuid);
-            
-            for c in (service?.characteristics!)! {
-                
-                if c.uuid.uuidString == self.DescriptorNameForNodify{
-                    
-                    peripheral?.setNotifyValue(true, for: c)
-                    
-                    
-                }
-                
-                if c.uuid.uuidString == self.DescriptorNameForWrite{
-                    
-                    self.currcharacteristic = c
-                }
-            }
-            
-            
-            
-            
-        })
-        
-        //设置读取characteristics的委托
-        baby?.setBlockOnReadValueForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
-            //            将特征付对象传出去
-            
-            
-            print("characteristic name:%@ value is:%@",characteristic?.uuid as Any,characteristic?.value)
-        })
-        
-        //设置发现characteristics的descriptors的委托
-        baby?.setBlockOnDiscoverDescriptorsForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
-            print("===characteristic name:%@",characteristic?.service.uuid);
-        })
-        
-        //设置beats break委托
-        rhythm.setBlockOnBeatsBreak { (bry) in
-            print("setBlockOnBeatsBreak call");
-        }
-        
-        //设置beats over委托
-        rhythm.setBlockOnBeatsOver { (bry) in
-            NSLog("setBlockOnBeatsOver call");
-        }
-        
-        let scanForPeripheralsWithOptions = ["CBCentralManagerScanOptionAllowDuplicatesKey" : 1]
-        
-        
-        
-        let connectOptions = ["CBConnectPeripheralOptionNotifyOnConnectionKey" : 1,
-                              "CBConnectPeripheralOptionNotifyOnDisconnectionKey":1,
-                              "CBConnectPeripheralOptionNotifyOnNotificationKey":1];
-        
-        
-        
-        
-        baby?.setBabyOptionsAtChannel(channelOnPeropheral, scanForPeripheralsWithOptions: scanForPeripheralsWithOptions, connectPeripheralWithOptions: connectOptions, scanForPeripheralsWithServices: nil, discoverWithServices: nil, discoverWithCharacteristics: nil)
-        
-        
-        loadDataForPeripheral()
-    }
-    func loadDataForPeripheral(){
-        
-        baby?.having(self.currPeripheral).and().channel(channelOnPeropheral).then().connectToPeripherals().discoverServices().discoverCharacteristics().readValueForCharacteristic().discoverDescriptorsForCharacteristic().readValueForDescriptors().begin()
-        
-        
-    }
+//    func BabyDelegateForPeripheralServer(){
+//        
+//        
+//        let rhythm = BabyRhythm()
+//        
+//        
+//        //设置读取characteristics的委托
+//        baby?.setBlockOnConnectedAtChannel(channelOnPeropheral, block: { (central, peripheral) in
+//            print("外设名称:\(peripheral?.name)")
+//        })
+//        
+//        
+//        
+//        
+//        //设置设备连接失败的委托
+//        baby?.setBlockOnFailToConnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
+//            print("设备连接失败\(peripheral?.name)")
+//            
+//        })
+//        
+//        //设置设备断开连接的委托
+//        baby?.setBlockOnDisconnectAtChannel(channelOnPeropheral, block: { (central, peripheral, error) in
+//            print("设备：断开连接 \(peripheral?.name)");
+//        })
+//        
+//        
+//        //设置发现设备的Services的委托
+//        baby?.setBlockOnDiscoverServicesAtChannel(channelOnPeropheral, block: { (peripheral, error) in
+//            //            rhythm.beats()  //建立心跳
+//        })
+//        
+//        //设置发现设service的Characteristics的委托
+//        
+//        baby?.setBlockOnDiscoverCharacteristicsAtChannel(channelOnPeropheral, block: { (peripheral, service, error) -> Void in
+//            //            print("===service name:%@",service?.uuid);
+//            
+//            for c in (service?.characteristics!)! {
+//                
+//                if c.uuid.uuidString == self.DescriptorNameForNodify{
+//                    
+//                    peripheral?.setNotifyValue(true, for: c)
+//                    
+//                    
+//                }
+//                
+//                if c.uuid.uuidString == self.DescriptorNameForWrite{
+//                    
+//                    self.currcharacteristic = c
+//                }
+//            }
+//            
+//            
+//            
+//            
+//        })
+//        
+//        //设置读取characteristics的委托
+//        baby?.setBlockOnReadValueForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
+//            //            将特征付对象传出去
+//            
+//            
+//            print("characteristic name:%@ value is:%@",characteristic?.uuid as Any,characteristic?.value)
+//        })
+//        
+//        //设置发现characteristics的descriptors的委托
+//        baby?.setBlockOnDiscoverDescriptorsForCharacteristicAtChannel(channelOnPeropheral, block: { (peripheral, characteristic, error) in
+//            print("===characteristic name:%@",characteristic?.service.uuid);
+//        })
+//        
+//        //设置beats break委托
+//        rhythm.setBlockOnBeatsBreak { (bry) in
+//            print("setBlockOnBeatsBreak call");
+//        }
+//        
+//        //设置beats over委托
+//        rhythm.setBlockOnBeatsOver { (bry) in
+//            NSLog("setBlockOnBeatsOver call");
+//        }
+//        
+//        let scanForPeripheralsWithOptions = ["CBCentralManagerScanOptionAllowDuplicatesKey" : 1]
+//        
+//        
+//        
+//        let connectOptions = ["CBConnectPeripheralOptionNotifyOnConnectionKey" : 1,
+//                              "CBConnectPeripheralOptionNotifyOnDisconnectionKey":1,
+//                              "CBConnectPeripheralOptionNotifyOnNotificationKey":1];
+//        
+//        
+//        
+//        
+//        baby?.setBabyOptionsAtChannel(channelOnPeropheral, scanForPeripheralsWithOptions: scanForPeripheralsWithOptions, connectPeripheralWithOptions: connectOptions, scanForPeripheralsWithServices: nil, discoverWithServices: nil, discoverWithCharacteristics: nil)
+//        
+//        
+//        loadDataForPeripheral()
+//    }
+//    func loadDataForPeripheral(){
+//        
+//        baby?.having(self.currPeripheral).and().channel(channelOnPeropheral).then().connectToPeripherals().discoverServices().discoverCharacteristics().readValueForCharacteristic().discoverDescriptorsForCharacteristic().readValueForDescriptors().begin()
+//        
+//        
+//    }
     func writeValue(){
         BabyToy.writeValue(self.currPeripheral, characteristic: self.currcharacteristic)
         
@@ -314,8 +318,8 @@ class MainViewController: BaseViewController ,UIGestureRecognizerDelegate{
             print("update finish")
         }
 //        http://localhost:8080/bundlejs/index.js
-//        instance!.render(with: url!, options: ["bundleUrl":String.init(format: "file://%@/bundlejs/", Bundle.main.bundlePath)], data: nil)
-          instance!.render(with: url!, options: ["bundleUrl":String.init(format: "http://127.0.0.1:8080/bundlejs/", Bundle.main.bundlePath)], data: nil)
+        instance!.render(with: url!, options: ["bundleUrl":String.init(format: "file://%@/bundlejs/", Bundle.main.bundlePath)], data: nil)
+//          instance!.render(with: url!, options: ["bundleUrl":String.init(format: "http://127.0.0.1:8080/bundlejs/", Bundle.main.bundlePath)], data: nil)
     
     
     }

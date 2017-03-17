@@ -20,6 +20,10 @@ public let ADImageLoadSecussed = "ADImageLoadSecussed"
 public let ADImageLoadFail = "ADImageLoadFail"
 public let GuideViewControllerDidFinish = "GuideViewControllerDidFinish"
 
+public let loginSuncessForMainTabbar = "loginSuncessForMainTabbar"
+
+public let loginFailForMainTabbar = "loginFailForMainTabbar"
+
 // MARK: - Cache路径
 public let LFBCachePath: String = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).last!
 

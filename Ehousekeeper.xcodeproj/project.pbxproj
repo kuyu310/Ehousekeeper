@@ -48,7 +48,6 @@
 		E48FE9C11E691D30004A2715 /* MainAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9C01E691D30004A2715 /* MainAD.swift */; };
 		E48FE9C31E691D9F004A2715 /* AD in Resources */ = {isa = PBXBuildFile; fileRef = E48FE9C21E691D9F004A2715 /* AD */; };
 		E48FE9C71E6954F9004A2715 /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9C61E6954F9004A2715 /* GuideViewController.swift */; };
-		E48FE9CA1E6955CA004A2715 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48FE9C91E6955CA004A2715 /* BaseViewController.swift */; };
 		E49CDD841E6FB291006341FA /* BabyBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD731E6FB291006341FA /* BabyBluetooth.m */; };
 		E49CDD851E6FB291006341FA /* BabyCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD751E6FB291006341FA /* BabyCallback.m */; };
 		E49CDD861E6FB291006341FA /* BabyCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CDD771E6FB291006341FA /* BabyCentralManager.m */; };
@@ -67,13 +66,19 @@
 		E4AF1FB01E6663B000C587DE /* E_housekeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1FAF1E6663B000C587DE /* E_housekeeperTests.swift */; };
 		E4AF1FBB1E6663B000C587DE /* E_housekeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1FBA1E6663B000C587DE /* E_housekeeperUITests.swift */; };
 		E4AF1FCB1E66AF9C00C587DE /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4AF1FCA1E66AF9C00C587DE /* Common.swift */; };
-		E4B25D8A1E7297F700D40AA6 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */; };
-		E4B25D8B1E7297F700D40AA6 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E4B25DAC1E7852D300D40AA6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B25DAB1E7852D300D40AA6 /* LoginViewController.swift */; };
-		E4B25DC31E78693E00D40AA6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */; };
-		E4B25DC41E78693E00D40AA6 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E4B25DDC1E78731300D40AA6 /* NHKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */; };
 		E4B25DEB1E78C7EC00D40AA6 /* security_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E4B25DEA1E78C7EC00D40AA6 /* security_logo.jpg */; };
+		E4B9E8391E7C033400B4E204 /* KeeperMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8381E7C033400B4E204 /* KeeperMessageViewController.swift */; };
+		E4B9E83C1E7C033B00B4E204 /* WorksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E83B1E7C033B00B4E204 /* WorksViewController.swift */; };
+		E4B9E8461E7C041700B4E204 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8441E7C041700B4E204 /* BaseViewController.swift */; };
+		E4B9E8471E7C041700B4E204 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8451E7C041700B4E204 /* TabbarController.swift */; };
+		E4B9E8481E7C046E00B4E204 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B9E8171E7C029F00B4E204 /* Alamofire.framework */; };
+		E4B9E8491E7C048900B4E204 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B9E82A1E7C02A600B4E204 /* SnapKit.framework */; };
+		E4B9E84A1E7C048F00B4E204 /* SwiftMan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B9E8341E7C02AB00B4E204 /* SwiftMan.framework */; };
+		E4B9E8551E7C15FC00B4E204 /* AnimationTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E84F1E7C15FC00B4E204 /* AnimationTabBarController.swift */; };
+		E4B9E8561E7C15FC00B4E204 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8501E7C15FC00B4E204 /* BaseNavigationController.swift */; };
+		E4B9E8571E7C15FC00B4E204 /* NHKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8531E7C15FC00B4E204 /* NHKeyboard.m */; };
+		E4B9E8581E7C15FC00B4E204 /* SwiftDictModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B9E8541E7C15FC00B4E204 /* SwiftDictModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,82 +96,82 @@
 			remoteGlobalIDString = E4AF1F961E6663B000C587DE;
 			remoteInfo = "E-housekeeper";
 		};
-		E4B25D7C1E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8161E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS";
 		};
-		E4B25D7E1E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8181E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = "Alamofire iOS Tests";
 		};
-		E4B25D801E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E81A1E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4DD67C0B1A5C55C900ED2280;
 			remoteInfo = "Alamofire macOS";
 		};
-		E4B25D821E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E81C1E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F829C6B21A7A94F100A2CD59;
 			remoteInfo = "Alamofire macOS Tests";
 		};
-		E4B25D841E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E81E1E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4CF626EF1BA7CB3E0011A099;
 			remoteInfo = "Alamofire tvOS";
 		};
-		E4B25D861E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8201E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 4CF626F81BA7CB3E0011A099;
 			remoteInfo = "Alamofire tvOS Tests";
 		};
-		E4B25D881E7297D200D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8221E7C029F00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+			containerPortal = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = E4202FE01B667AA100C997FB;
 			remoteInfo = "Alamofire watchOS";
 		};
-		E4B25D8C1E7297F700D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8291E7C02A600B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = "Alamofire iOS";
-		};
-		E4B25DBB1E7868D000D40AA6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+			containerPortal = E4B9E8241E7C02A600B4E204 /* SnapKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
 			remoteInfo = SnapKit;
 		};
-		E4B25DBD1E7868D000D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E82B1E7C02A600B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+			containerPortal = E4B9E8241E7C02A600B4E204 /* SnapKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
 			remoteInfo = "SnapKit Tests";
 		};
-		E4B25DC51E78693E00D40AA6 /* PBXContainerItemProxy */ = {
+		E4B9E8331E7C02AB00B4E204 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
-			remoteInfo = SnapKit;
+			containerPortal = E4B9E82D1E7C02AB00B4E204 /* SwiftMan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD97787E1CD3031500BA2076;
+			remoteInfo = SwiftMan;
+		};
+		E4B9E8351E7C02AB00B4E204 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4B9E82D1E7C02AB00B4E204 /* SwiftMan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD9778881CD3031500BA2076;
+			remoteInfo = SwiftManTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -177,8 +182,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				E4B25DC41E78693E00D40AA6 /* SnapKit.framework in Embed Frameworks */,
-				E4B25D8B1E7297F700D40AA6 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +241,6 @@
 		E48FE9C01E691D30004A2715 /* MainAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAD.swift; sourceTree = "<group>"; };
 		E48FE9C21E691D9F004A2715 /* AD */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AD; sourceTree = "<group>"; };
 		E48FE9C61E6954F9004A2715 /* GuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
-		E48FE9C91E6955CA004A2715 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E49CDD721E6FB291006341FA /* BabyBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyBluetooth.h; sourceTree = "<group>"; };
 		E49CDD731E6FB291006341FA /* BabyBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyBluetooth.m; sourceTree = "<group>"; };
 		E49CDD741E6FB291006341FA /* BabyCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyCallback.h; sourceTree = "<group>"; };
@@ -273,12 +275,20 @@
 		E4AF1FBC1E6663B000C587DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4AF1FC81E66682300C587DE /* Ehousekeeper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ehousekeeper-Bridging-Header.h"; sourceTree = "<group>"; };
 		E4AF1FCA1E66AF9C00C587DE /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../E-housekeeper/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		E4B25DAB1E7852D300D40AA6 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "../../E-housekeeper/SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
-		E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHKeyboard.m; sourceTree = "<group>"; };
-		E4B25DDB1E78731300D40AA6 /* NHKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHKeyboard.h; sourceTree = "<group>"; };
 		E4B25DEA1E78C7EC00D40AA6 /* security_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = security_logo.jpg; sourceTree = "<group>"; };
+		E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		E4B9E8241E7C02A600B4E204 /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = "SnapKit-develop/SnapKit.xcodeproj"; sourceTree = "<group>"; };
+		E4B9E82D1E7C02AB00B4E204 /* SwiftMan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftMan.xcodeproj; path = "SwiftMan-master/SwiftMan.xcodeproj"; sourceTree = "<group>"; };
+		E4B9E8381E7C033400B4E204 /* KeeperMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeeperMessageViewController.swift; sourceTree = "<group>"; };
+		E4B9E83B1E7C033B00B4E204 /* WorksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorksViewController.swift; sourceTree = "<group>"; };
+		E4B9E8441E7C041700B4E204 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E4B9E8451E7C041700B4E204 /* TabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
+		E4B9E84F1E7C15FC00B4E204 /* AnimationTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationTabBarController.swift; sourceTree = "<group>"; };
+		E4B9E8501E7C15FC00B4E204 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		E4B9E8521E7C15FC00B4E204 /* NHKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NHKeyboard.h; sourceTree = "<group>"; };
+		E4B9E8531E7C15FC00B4E204 /* NHKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NHKeyboard.m; sourceTree = "<group>"; };
+		E4B9E8541E7C15FC00B4E204 /* SwiftDictModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftDictModel.swift; sourceTree = "<group>"; };
 		EA98F8BE94136E2A7D53D8AF /* Pods-Ehousekeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ehousekeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ehousekeeper/Pods-Ehousekeeper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -287,10 +297,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B9E84A1E7C048F00B4E204 /* SwiftMan.framework in Frameworks */,
+				E4B9E8491E7C048900B4E204 /* SnapKit.framework in Frameworks */,
+				E4B9E8481E7C046E00B4E204 /* Alamofire.framework in Frameworks */,
 				AEB8B32CC456E288DE8917EA /* Pods_E_housekeeper.framework in Frameworks */,
-				E4B25D8A1E7297F700D40AA6 /* Alamofire.framework in Frameworks */,
 				708A50F62AD7D2AC7448C02A /* Pods_Ehousekeeper.framework in Frameworks */,
-				E4B25DC31E78693E00D40AA6 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,31 +403,23 @@
 		E48FE7981E66CBD7004A2715 /* class */ = {
 			isa = PBXGroup;
 			children = (
-				E48FE9C81E6955CA004A2715 /* base */,
+				E4B9E84E1E7C15FC00B4E204 /* Tools */,
+				E4B9E8431E7C041700B4E204 /* base */,
+				E4B9E83E1E7C035500B4E204 /* mine */,
+				E4B9E83D1E7C034B00B4E204 /* address */,
+				E4B9E83A1E7C033B00B4E204 /* works */,
+				E4B9E8371E7C033400B4E204 /* message */,
 				E48FE7AA1E6736FD004A2715 /* Extension */,
 				E48FE7A71E671E39004A2715 /* AD */,
-				E48FE7A31E66CEB9004A2715 /* Main */,
 				E48FE7A21E66CEB4004A2715 /* SupportingFiles */,
 				E48FE7A11E66CEAE004A2715 /* KeeperBase */,
 				E48FE7A01E66CEA9004A2715 /* Other */,
-				E48FE79F1E66CEA3004A2715 /* Flow */,
-				E48FE79E1E66CE9D004A2715 /* Address-List */,
 				E48FE79D1E66CE97004A2715 /* Resouce */,
-				E48FE79C1E66CE90004A2715 /* Mine */,
 				E48FE79B1E66CE8A004A2715 /* Login */,
 				E48FE79A1E66CE84004A2715 /* Home */,
-				E48FE7991E66CE79004A2715 /* Tools */,
 				E4AF1FC91E66AF9C00C587DE /* public */,
 			);
 			name = class;
-			sourceTree = "<group>";
-		};
-		E48FE7991E66CE79004A2715 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				E4B25DA01E78522F00D40AA6 /* KeyBoard */,
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		E48FE79A1E66CE84004A2715 /* Home */ = {
@@ -434,13 +437,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		E48FE79C1E66CE90004A2715 /* Mine */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mine;
-			sourceTree = "<group>";
-		};
 		E48FE79D1E66CE97004A2715 /* Resouce */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,20 +445,6 @@
 				E48FE9C21E691D9F004A2715 /* AD */,
 			);
 			path = Resouce;
-			sourceTree = "<group>";
-		};
-		E48FE79E1E66CE9D004A2715 /* Address-List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Address-List";
-			sourceTree = "<group>";
-		};
-		E48FE79F1E66CEA3004A2715 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Flow;
 			sourceTree = "<group>";
 		};
 		E48FE7A01E66CEA9004A2715 /* Other */ = {
@@ -484,13 +466,6 @@
 			children = (
 			);
 			path = SupportingFiles;
-			sourceTree = "<group>";
-		};
-		E48FE7A31E66CEB9004A2715 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		E48FE7A71E671E39004A2715 /* AD */ = {
@@ -541,14 +516,6 @@
 			name = model;
 			sourceTree = "<group>";
 		};
-		E48FE9C81E6955CA004A2715 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				E48FE9C91E6955CA004A2715 /* BaseViewController.swift */,
-			);
-			path = base;
-			sourceTree = "<group>";
-		};
 		E49CDD711E6FB291006341FA /* babyblooth-for-swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,8 +544,9 @@
 		E4AF1F8E1E6663B000C587DE = {
 			isa = PBXGroup;
 			children = (
-				E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */,
-				E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */,
+				E4B9E82D1E7C02AB00B4E204 /* SwiftMan.xcodeproj */,
+				E4B9E8241E7C02A600B4E204 /* SnapKit.xcodeproj */,
+				E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */,
 				E48FE9BB1E68538E004A2715 /* bundlejs */,
 				E48FE7931E66C2A1004A2715 /* 日志 */,
 				E4AF1F991E6663B000C587DE /* E-housekeeper */,
@@ -644,37 +612,99 @@
 			path = public;
 			sourceTree = "<group>";
 		};
-		E4B25D721E7297D200D40AA6 /* Products */ = {
+		E4B9E80C1E7C029F00B4E204 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */,
-				E4B25D7F1E7297D200D40AA6 /* Alamofire iOS Tests.xctest */,
-				E4B25D811E7297D200D40AA6 /* Alamofire.framework */,
-				E4B25D831E7297D200D40AA6 /* Alamofire macOS Tests.xctest */,
-				E4B25D851E7297D200D40AA6 /* Alamofire.framework */,
-				E4B25D871E7297D200D40AA6 /* Alamofire tvOS Tests.xctest */,
-				E4B25D891E7297D200D40AA6 /* Alamofire.framework */,
+				E4B9E8171E7C029F00B4E204 /* Alamofire.framework */,
+				E4B9E8191E7C029F00B4E204 /* Alamofire iOS Tests.xctest */,
+				E4B9E81B1E7C029F00B4E204 /* Alamofire.framework */,
+				E4B9E81D1E7C029F00B4E204 /* Alamofire macOS Tests.xctest */,
+				E4B9E81F1E7C029F00B4E204 /* Alamofire.framework */,
+				E4B9E8211E7C029F00B4E204 /* Alamofire tvOS Tests.xctest */,
+				E4B9E8231E7C029F00B4E204 /* Alamofire.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E4B25DA01E78522F00D40AA6 /* KeyBoard */ = {
+		E4B9E8251E7C02A600B4E204 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E4B25DDA1E78731300D40AA6 /* NHKeyboard.m */,
-				E4B25DDB1E78731300D40AA6 /* NHKeyboard.h */,
-			);
-			name = KeyBoard;
-			path = "../../../../E-housekeeper/E-housekeeper/Tools/KeyBoard";
-			sourceTree = "<group>";
-		};
-		E4B25DB01E7868D000D40AA6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */,
-				E4B25DBE1E7868D000D40AA6 /* SnapKit Tests.xctest */,
+				E4B9E82A1E7C02A600B4E204 /* SnapKit.framework */,
+				E4B9E82C1E7C02A600B4E204 /* SnapKit Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B9E82E1E7C02AB00B4E204 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E8341E7C02AB00B4E204 /* SwiftMan.framework */,
+				E4B9E8361E7C02AB00B4E204 /* SwiftManTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4B9E8371E7C033400B4E204 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E8381E7C033400B4E204 /* KeeperMessageViewController.swift */,
+			);
+			name = message;
+			path = class/message;
+			sourceTree = "<group>";
+		};
+		E4B9E83A1E7C033B00B4E204 /* works */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E83B1E7C033B00B4E204 /* WorksViewController.swift */,
+			);
+			name = works;
+			path = class/works;
+			sourceTree = "<group>";
+		};
+		E4B9E83D1E7C034B00B4E204 /* address */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = address;
+			path = class/address;
+			sourceTree = "<group>";
+		};
+		E4B9E83E1E7C035500B4E204 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = mine;
+			path = class/mine;
+			sourceTree = "<group>";
+		};
+		E4B9E8431E7C041700B4E204 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E8441E7C041700B4E204 /* BaseViewController.swift */,
+				E4B9E8451E7C041700B4E204 /* TabbarController.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		E4B9E84E1E7C15FC00B4E204 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E84F1E7C15FC00B4E204 /* AnimationTabBarController.swift */,
+				E4B9E8501E7C15FC00B4E204 /* BaseNavigationController.swift */,
+				E4B9E8511E7C15FC00B4E204 /* KeyBoard */,
+				E4B9E8541E7C15FC00B4E204 /* SwiftDictModel.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E4B9E8511E7C15FC00B4E204 /* KeyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				E4B9E8521E7C15FC00B4E204 /* NHKeyboard.h */,
+				E4B9E8531E7C15FC00B4E204 /* NHKeyboard.m */,
+			);
+			path = KeyBoard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -695,8 +725,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				E4B25D8D1E7297F700D40AA6 /* PBXTargetDependency */,
-				E4B25DC61E78693E00D40AA6 /* PBXTargetDependency */,
 			);
 			name = Ehousekeeper;
 			productName = "E-housekeeper";
@@ -779,12 +807,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = E4B25D721E7297D200D40AA6 /* Products */;
-					ProjectRef = E4B25D711E7297D200D40AA6 /* Alamofire.xcodeproj */;
+					ProductGroup = E4B9E80C1E7C029F00B4E204 /* Products */;
+					ProjectRef = E4B9E80B1E7C029F00B4E204 /* Alamofire.xcodeproj */;
 				},
 				{
-					ProductGroup = E4B25DB01E7868D000D40AA6 /* Products */;
-					ProjectRef = E4B25DAF1E7868D000D40AA6 /* SnapKit.xcodeproj */;
+					ProductGroup = E4B9E8251E7C02A600B4E204 /* Products */;
+					ProjectRef = E4B9E8241E7C02A600B4E204 /* SnapKit.xcodeproj */;
+				},
+				{
+					ProductGroup = E4B9E82E1E7C02AB00B4E204 /* Products */;
+					ProjectRef = E4B9E82D1E7C02AB00B4E204 /* SwiftMan.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -797,67 +829,81 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		E4B25D7D1E7297D200D40AA6 /* Alamofire.framework */ = {
+		E4B9E8171E7C029F00B4E204 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = E4B25D7C1E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E8161E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D7F1E7297D200D40AA6 /* Alamofire iOS Tests.xctest */ = {
+		E4B9E8191E7C029F00B4E204 /* Alamofire iOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire iOS Tests.xctest";
-			remoteRef = E4B25D7E1E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E8181E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D811E7297D200D40AA6 /* Alamofire.framework */ = {
+		E4B9E81B1E7C029F00B4E204 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = E4B25D801E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E81A1E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D831E7297D200D40AA6 /* Alamofire macOS Tests.xctest */ = {
+		E4B9E81D1E7C029F00B4E204 /* Alamofire macOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire macOS Tests.xctest";
-			remoteRef = E4B25D821E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E81C1E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D851E7297D200D40AA6 /* Alamofire.framework */ = {
+		E4B9E81F1E7C029F00B4E204 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = E4B25D841E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E81E1E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D871E7297D200D40AA6 /* Alamofire tvOS Tests.xctest */ = {
+		E4B9E8211E7C029F00B4E204 /* Alamofire tvOS Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "Alamofire tvOS Tests.xctest";
-			remoteRef = E4B25D861E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E8201E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25D891E7297D200D40AA6 /* Alamofire.framework */ = {
+		E4B9E8231E7C029F00B4E204 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = E4B25D881E7297D200D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E8221E7C029F00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25DBC1E7868D000D40AA6 /* SnapKit.framework */ = {
+		E4B9E82A1E7C02A600B4E204 /* SnapKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SnapKit.framework;
-			remoteRef = E4B25DBB1E7868D000D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E8291E7C02A600B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E4B25DBE1E7868D000D40AA6 /* SnapKit Tests.xctest */ = {
+		E4B9E82C1E7C02A600B4E204 /* SnapKit Tests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = "SnapKit Tests.xctest";
-			remoteRef = E4B25DBD1E7868D000D40AA6 /* PBXContainerItemProxy */;
+			remoteRef = E4B9E82B1E7C02A600B4E204 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4B9E8341E7C02AB00B4E204 /* SwiftMan.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SwiftMan.framework;
+			remoteRef = E4B9E8331E7C02AB00B4E204 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E4B9E8361E7C02AB00B4E204 /* SwiftManTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = SwiftManTests.xctest;
+			remoteRef = E4B9E8351E7C02AB00B4E204 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -972,27 +1018,33 @@
 				E4016B171E6BD70900A950E3 /* DHGifImageOperation.m in Sources */,
 				E48FE8B01E6828F7004A2715 /* WXImageLoaderDefaultImplement.swift in Sources */,
 				E4016B0F1E6BD70300A950E3 /* DHLaunchAdPageHUD.m in Sources */,
-				E48FE9CA1E6955CA004A2715 /* BaseViewController.swift in Sources */,
 				E48FE7B11E6736FD004A2715 /* Color+Extension.swift in Sources */,
 				E48FE9BE1E691355004A2715 /* ADViewController.swift in Sources */,
 				E49CDD881E6FB291006341FA /* BabyOptions.m in Sources */,
 				E48FE9C11E691D30004A2715 /* MainAD.swift in Sources */,
+				E4B9E8581E7C15FC00B4E204 /* SwiftDictModel.swift in Sources */,
 				E4016B181E6BD70900A950E3 /* DHGuidePageHUD.m in Sources */,
-				E4B25DDC1E78731300D40AA6 /* NHKeyboard.m in Sources */,
 				E48FE7B51E6736FD004A2715 /* UIView+Extension.swift in Sources */,
 				E48FE7A91E6734D1004A2715 /* Theme.swift in Sources */,
 				E4AF1FCB1E66AF9C00C587DE /* Common.swift in Sources */,
 				E49CDD8B1E6FB291006341FA /* BabySpeaker.m in Sources */,
 				E49CDD851E6FB291006341FA /* BabyCallback.m in Sources */,
 				E48FE7B41E6736FD004A2715 /* UIImage + Extension.swift in Sources */,
+				E4B9E8551E7C15FC00B4E204 /* AnimationTabBarController.swift in Sources */,
 				E4016B101E6BD70300A950E3 /* DHRegularExpression.m in Sources */,
 				E49CDD841E6FB291006341FA /* BabyBluetooth.m in Sources */,
+				E4B9E83C1E7C033B00B4E204 /* WorksViewController.swift in Sources */,
 				E48FE9C71E6954F9004A2715 /* GuideViewController.swift in Sources */,
+				E4B9E8461E7C041700B4E204 /* BaseViewController.swift in Sources */,
+				E4B9E8561E7C15FC00B4E204 /* BaseNavigationController.swift in Sources */,
 				E48FE7B61E6736FD004A2715 /* UpImageDownTextButton.swift in Sources */,
 				E48FE8AE1E6828F7004A2715 /* WXEventModule.m in Sources */,
 				E49FAE461E7134F5009CCDEA /* WXBlutoochComponent.swift in Sources */,
+				E4B9E8571E7C15FC00B4E204 /* NHKeyboard.m in Sources */,
 				E4B25DAC1E7852D300D40AA6 /* LoginViewController.swift in Sources */,
+				E4B9E8391E7C033400B4E204 /* KeeperMessageViewController.swift in Sources */,
 				E48FE8B21E6828F7004A2715 /* WXMapComponent.swift in Sources */,
+				E4B9E8471E7C041700B4E204 /* TabbarController.swift in Sources */,
 				E49CDD8A1E6FB291006341FA /* BabyRhythm.m in Sources */,
 				E49CDD891E6FB291006341FA /* BabyPeripheralManager.m in Sources */,
 				E48FE8B11E6828F7004A2715 /* WXImgLoaderDefaultImpl.m in Sources */,
@@ -1029,16 +1081,6 @@
 			isa = PBXTargetDependency;
 			target = E4AF1F961E6663B000C587DE /* Ehousekeeper */;
 			targetProxy = E4AF1FB71E6663B000C587DE /* PBXContainerItemProxy */;
-		};
-		E4B25D8D1E7297F700D40AA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Alamofire iOS";
-			targetProxy = E4B25D8C1E7297F700D40AA6 /* PBXContainerItemProxy */;
-		};
-		E4B25DC61E78693E00D40AA6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SnapKit;
-			targetProxy = E4B25DC51E78693E00D40AA6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

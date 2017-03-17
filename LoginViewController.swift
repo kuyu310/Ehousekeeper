@@ -18,15 +18,8 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
     var horizontalLine: UIView! //分隔线
     var confirmButton:UIButton! //登录按钮
     var titleLabel: UILabel! //标题标签
-    
+    var titleImageLogo: UIImageView! //首页logo'
     var topConstraint: Constraint? //登录框距顶部距离约束
-    
-    
-    
-    
-    
-    
-    
     
     
     var fd : UITextField?
@@ -34,7 +27,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
 
     var kb : NHKeyboard?
     var kb2: NHKeyboard?
-    
+    var isKBload: Bool?
     
 
     
@@ -184,19 +177,29 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         }
         
         //标题label
-        self.titleLabel = UILabel()
-        self.titleLabel.text = "银企管家"
-        self.titleLabel.textColor = UIColor.white
-        self.titleLabel.font = UIFont.systemFont(ofSize: 36)
-        self.view.addSubview(self.titleLabel)
-        self.titleLabel.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalTo(self.formView.snp.top).offset(-20)
-            make.centerX.equalTo(self.view)
-            make.height.equalTo(74)
-        }
+//        self.titleLabel = UILabel()
+//        self.titleLabel.text = "银企管家"
+//        self.titleLabel.textColor = UIColor.white
+//        self.titleLabel.font = UIFont.systemFont(ofSize: 36)
+//        self.view.addSubview(self.titleLabel)
+//        self.titleLabel.snp.makeConstraints { (make) -> Void in
+//            make.bottom.equalTo(self.formView.snp.top).offset(-60)
+//            make.centerX.equalTo(self.view)
+//            make.height.equalTo(74)
+//        }
 
         
- 
+         titleImageLogo =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
+         titleImageLogo.image = UIImage(named:"logo")
+         self.view.addSubview(self.titleImageLogo)
+         self.titleImageLogo.snp.makeConstraints { (make) -> Void in
+                    make.bottom.equalTo(self.formView.snp.top).offset(-10)
+                    make.centerX.equalTo(self.view)
+                    make.height.equalTo(180)
+                    make.left.equalTo(100)
+                    make.right.equalTo(-100)
+                }
+    
         
         
     }
@@ -209,15 +212,16 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
     func keyboardWillChange(_ notification: Notification) {
         
         
-       
-
-        
-        
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.topConstraint?.update(offset: -125)
             
 //            这里需要关闭动画效果，不然输入的文本会发生动画漂移，很难看
-           // self.view.layoutIfNeeded()
+//              或者用下面的方式也可以
+            if  self.isKBload != true {
+               self.view.layoutIfNeeded()
+               self.isKBload = true
+            }
+            
         })
 
         
@@ -231,6 +235,8 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         UIView.animate(withDuration: 0.5, animations: { () -> Void in
             self.topConstraint?.update(offset: 0)
             self.view.layoutIfNeeded()
+           
+            self.isKBload = false
         })
     }
   
@@ -267,17 +273,40 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         //收起键盘
         self.view.endEditing(true)
         
+        
+        UIView.animate(withDuration: 1.0, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            
+            self.view.alpha = 0
+            
+        }, completion: {(Bool) -> Void in
+        
+            NotificationCenter.default.post(name: Notification.Name(rawValue: loginSuncessForMainTabbar), object: nil)
+        
+        })
+        
+        
+        
+        
+        
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: loginSuncessForMainTabbar), object: nil)
+        
     }
     
-    override func hideKeyboardWhenTappedAround() {
+     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
-    override func dismissKeyboard() {
+     func dismissKeyboard() {
         self.view.endEditing(true)
         
 
+        
+        
+        
+        
+        
+        
     }
 
     

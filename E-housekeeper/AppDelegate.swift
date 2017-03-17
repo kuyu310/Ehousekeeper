@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         var data :Data?
         
-        Alamofire.request("http://ojjpkscxv.bkt.clouddn.com/AD").responseData {response in
+            Alamofire.request("http://ojjpkscxv.bkt.clouddn.com/AD").responseData {response in
 //            Alamofire.request("http://ojjpkscxv.bkt.clouddn.com/AD").responseData(completionHandler: <#T##(DataResponse<Data>) -> Void#>)
             switch response.result.isSuccess {
                 
@@ -135,17 +135,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.shoMainTabBarController), name: NSNotification.Name(rawValue: GuideViewControllerDidFinish), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.loginSuncessForMainTabbarController(_:)), name: NSNotification.Name(rawValue: loginSuncessForMainTabbar), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.loginFailForMainTabbarController(_:)), name: NSNotification.Name(rawValue: loginFailForMainTabbar), object: nil)
+        
+        
+        
+        
     }
 
-    func showMainTabbarControllerSucess(_ noti: Notification) {
+    
+    func loginSuncessForMainTabbarController(_ noti: Notification){
+        
         let mainViewController = MainViewController()
+        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+        window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
+        
+    }
+    func loginFailForMainTabbarController(_ noti: Notification){
+        
+        let mainViewController = MainViewController()
+        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+        window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
+        
+    }
+ 
+    func showMainTabbarControllerSucess(_ noti: Notification) {
         
         let mLoginViewController = LoginViewController()
         
-//        mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
-        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
-        
-//        window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
         
         window!.rootViewController = UINavigationController.init(rootViewController: mLoginViewController)
         
@@ -154,15 +173,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func showMainTabbarControllerFale() {
         let mainViewController = MainViewController()
-//         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
-        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
+         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+//        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
         window!.rootViewController = UINavigationController.init(rootViewController: mainViewController)
     }
     
     func shoMainTabBarController() {
         let mainViewController = MainViewController()
-//         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
-        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
+         mainViewController.url = URL.init(string: String.init(format: "file://%@/bundlejs/index.js", Bundle.main.bundlePath))
+//        mainViewController.url = URL.init(string: String.init(format: "http://localhost:8080/bundlejs/index.js", Bundle.main.bundlePath))
         
         
        
