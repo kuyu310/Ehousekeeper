@@ -8,6 +8,11 @@
 
 import Foundation
 import SnapKit
+import Alamofire
+
+
+
+var userIdGlob: String = ""
 
 
 class LoginViewController: BaseViewController , UITextFieldDelegate{
@@ -26,7 +31,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
     var decimal:UITextField?
 
     var kb : NHKeyboard?
-    var kb2: NHKeyboard?
+    
     var isKBload: Bool?
     
 
@@ -91,7 +96,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         //用户名输入框
         self.txtUser = UITextField()
         self.txtUser.delegate = self
-        self.txtUser.placeholder = "用户名"
+        self.txtUser.placeholder = "请输入手机号"
         self.txtUser.tag = 100
         self.txtUser.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
         self.txtUser.leftViewMode = UITextFieldViewMode.always
@@ -111,6 +116,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         }
 
         kb = NHKeyboard(type: NHKBTypeASCIICapable)
+    
         self.fd = self.txtUser
         kb.enterprise = "信雅达安全输入";
         kb.icon = "security_logo.jpg"
@@ -241,30 +247,6 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
     }
   
     
-    //输入框返回时操作
-    
-//   
-//    func textFieldShouldEndEditing(_ textField:UITextField) -> Bool
-//    {
-//        let tag = textField.tag
-//        switch tag {
-//        case 100:
-//
-//            
-//         //   self.txtUser.resignFirstResponder()
-//         
-//            self.txtUser.endEditing(true)
-//
-//        case 101:
-//            
-//            loginConfrim()
-//        default:
-//            print(textField.text!)
-//        }
-//        return true
-//        
-//    }
-
 
     
     
@@ -272,6 +254,12 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
     func loginConfrim(){
         //收起键盘
         self.view.endEditing(true)
+        if self.txtUser.text?.isEmpty == true {
+            
+            print("用户名为空")
+            return
+        }
+        userIdGlob = self.txtUser.text!  //赋值给全局
         
         
         UIView.animate(withDuration: 1.0, delay: 0.5, options: UIViewAnimationOptions.curveEaseOut, animations: {
@@ -286,11 +274,73 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
         
         
         
+        var apptoken:String = getappToken()
         
         
-//        NotificationCenter.default.post(name: Notification.Name(rawValue: loginSuncessForMainTabbar), object: nil)
+
         
     }
+    
+    
+    
+    func  getappToken() ->String {
+        
+        var urlString = "http://xxx.com/v1/app/token/request_token"
+        
+        var token:String? = "ss"
+        
+        
+        let parameters: Parameters = ["app_id": "56e6183b5610d746578a9cf4",
+                                      "app_secret": "56e6183b2560ad79242a0ae4",
+                                      "mobile_id": "dfgdfgsdfgsdfgsdfg"]
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default)
+           .responseJSON { response in
+            if let JSON = response.result.value {
+                                    var  datajosn:NSDictionary = JSON as! NSDictionary
+                                    var data:NSDictionary = datajosn["data"] as! NSDictionary
+                                    token = data["token"] as! String
+                                    self.login(apptoken: token!);
+                                }
+
+        }
+        
+        return  token!
+
+    }
+    
+    
+    func login(apptoken:String)
+    {
+        
+        var urlString = "http://xxx.com/v1/app/token/request_token"
+        
+        let parameters: Parameters = ["mobile_phone": self.txtUser.text,
+                                      "password": self.txtPwd.text]
+        
+        let headers: HTTPHeaders = [
+            "X-Ylwl-App-Token": apptoken
+          ]
+        
+        Alamofire.request(urlString, method: .post, parameters: parameters, encoding: JSONEncoding.default,headers: headers)
+            .responseJSON { responseObject in
+                
+               print(responseObject.result.value)
+                
+//                如果登录成功，紧接着登录融云
+                
+                
+        }
+        
+       
+
+        
+        
+    }
+    
+    
+    
+
     
      func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
@@ -303,9 +353,7 @@ class LoginViewController: BaseViewController , UITextFieldDelegate{
 
         
         
-        
-        
-        
+      
         
     }
 

@@ -34,6 +34,22 @@
 #import "MJExtension.h"
 //安全键盘
 #import "NHKeyboard.h"
+#import "HyPopMenuView.h"
+#import "popMenvTopView.h"
 
+#import <RongIMKit/RongIMKit.h>
+
+#import <PopMenu/PopMenu.h>
+#import "AFHttpTool.h"
+#import "RCDUIBarButtonItem.h"
+
+#import "RCDTestMessage.h"
+#import "RCDTestMessageCell.h"
+
+#import "WMVideoMessage.h"
+#import "WMVideoMessageCell.h"
+#import "RCDataManager.h"
+//oc类的头文件，扩展函数
+#import "CZAdditions.h"
 
 #endif /* E_housekeeper_Bridging_Header_h */

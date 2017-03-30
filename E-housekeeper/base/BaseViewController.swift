@@ -4,9 +4,12 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
         view.backgroundColor = KeeperGlobalBackgroundColor
 
     }
@@ -15,3 +18,5 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
     }
 }
+
+

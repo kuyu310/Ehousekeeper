@@ -44,5 +44,18 @@ pod 'DeviceKit', '~> 1.0'
 pod 'WeexSDK'
 pod 'WXDevtool', '0.8.0'
 pod 'SDWebImage', '3.7.5'
+#pod 'KYGooeyMenu', '~> 1.0.5'
+#pod "ESTabBarController-swift"
+pod 'pop'
+
+
+#融云的sdk
+pod 'RongCloudIM/IMLib', '~> 2.8.3'
+pod 'RongCloudIM/IMKit', '~> 2.8.3'
+#表单验证
+#pod 'AJWValidator'
+pod 'PopMenu'
+
+
 
 end

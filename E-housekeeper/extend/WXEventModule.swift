@@ -17,7 +17,7 @@ public extension WXEventModule {
             //relative path
             newUrl = (URL.init(string: url, relativeTo: weexInstance.scriptURL)!.absoluteString)
         }
-        let controller: MainViewController = MainViewController()
+        let controller: KeeperMessageViewController = KeeperMessageViewController()
         controller.url = URL.init(string: newUrl)
         weexInstance.viewController.navigationController?.pushViewController(controller, animated:true)
         

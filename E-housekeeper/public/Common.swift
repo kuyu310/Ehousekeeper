@@ -9,6 +9,11 @@
 import UIKit
 /// 归档路径
 let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)[0] as NSString
+
+/// 应用程序 ID
+let KeeperAppKey = "7781828192"
+
+
 let SELECTED_CHANNELS: String = "selectedChannels.archive" // 选择频道列表
 let UNSELECTED_CHANNELS: String = "unselectedChannels.archive" // 未选择频道列表
 let PAGE_TITLES: String = "pagetitles.archive" // 保存的pagetitles
@@ -57,6 +62,8 @@ let Request_Failure = "失败"
 let Request_Success = "成功"
 let Request_NOMore = "已加载全部"
 let Request_NoNetwork = "请检查网络链接"
+//融云的服务设置
+let  RONGCLOUD_IM_APPKEY = "sfci50a7sq7ci"
 
 
 

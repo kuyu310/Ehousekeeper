@@ -1,11 +1,4 @@
-//
-//  AnimationTabBarController.Swift
-//
-//  Created by 维尼的小熊 on 16/1/12.
-//  Copyright © 2016年 tianzhongtao. All rights reserved.
-//  GitHub地址:https://github.com/ZhongTaoTian/LoveFreshBeen
-//  Blog讲解地址:http://www.jianshu.com/p/879f58fe3542
-//  小熊的新浪微博:http://weibo.com/5622363113/profile?topnav=1&wvr=6
+
 
 import UIKit
 
@@ -111,7 +104,7 @@ class AnimationTabBarController: UITabBarController {
     var iconsView: [(icon: UIImageView, textLabel: UILabel)] = []
     var iconsImageName:[String] = ["v2_home", "v2_order", "shopCart", "v2_my"]
     var iconsSelectedImageName:[String] = ["v2_home_r", "v2_order_r", "shopCart_r", "v2_my_r"]
-    var shopCarIcon: UIImageView?
+    var messageIcon: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +115,71 @@ class AnimationTabBarController: UITabBarController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    func createCustomIcons(_ containers : [String: UIView]) {
+        if let items = tabBar.items {
+            
+            for (index, item) in items.enumerated() {
+                
+                assert(item.image != nil, "add image icon in UITabBarItem")
+                
+                guard let container = containers["container\(index)"] else
+                {
+                    print("No container given")
+                    continue
+                }
+                
+                container.tag = index
+                
+                let imageW:CGFloat = 21
+                let imageX:CGFloat = (ScreenWidth / CGFloat(items.count) - imageW) * 0.5
+                let imageY:CGFloat = 8
+                let imageH:CGFloat = 21
+                let icon = UIImageView(frame: CGRect(x: imageX, y: imageY, width: imageW, height: imageH))
+                icon.image = item.image
+                icon.tintColor = UIColor.clear
+                
+                
+                // text
+                let textLabel = UILabel()
+                textLabel.frame = CGRect(x: 0, y: 32, width: ScreenWidth / CGFloat(items.count), height: 49 - 32)
+                textLabel.text = item.title
+                textLabel.backgroundColor = UIColor.clear
+                textLabel.font = UIFont.systemFont(ofSize: 10)
+                textLabel.textAlignment = NSTextAlignment.center
+                textLabel.textColor = UIColor.gray
+                textLabel.translatesAutoresizingMaskIntoConstraints = false
+                container.addSubview(icon)
+                container.addSubview(textLabel)
+                
+                
+                if let tabBarItem = tabBar.items {
+                    let textLabelWidth = tabBar.frame.size.width / CGFloat(tabBarItem.count)
+                    textLabel.bounds.size.width = textLabelWidth
+                }
+                
+                if 0 == index {
+                    let redDotView = MessageRedDotView.sharedRedDotView
+                    redDotView.frame = CGRect(x: imageH + 1, y: -3, width: 15, height: 15)
+                    icon.addSubview(redDotView)
+                    messageIcon = icon
+                }
+                
+                let iconsAndLabels = (icon:icon, textLabel:textLabel)
+                iconsView.append(iconsAndLabels)
+                
+                
+                item.image = nil
+                item.title = ""
+                
+                if index == 0 {
+                    selectedIndex = 0
+                    selectItem(0)
+                }
+            }
+        }
+    }
     
+
     func createViewContainers() -> [String: UIView] {
 //        定义一个字典【字符串：视图】
         var containersDict = [String: UIView]()
@@ -162,7 +219,11 @@ class AnimationTabBarController: UITabBarController {
     
     
     
-    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        setSelectIndex(from: selectedIndex, to: item.tag)
+    }
+
   
     
     func selectItem(_ Index: Int) {
@@ -171,5 +232,30 @@ class AnimationTabBarController: UITabBarController {
         selectIcon.image = UIImage(named: iconsSelectedImageName[Index])!
         items[Index].selectedState(selectIcon, textLabel: iconsView[Index].textLabel)
     }
+    
+    func setSelectIndex(from: Int,to: Int) {
+        
+//        if to == 0 {
+//            let vc = childViewControllers[selectedIndex]
+//            let shopCar = MessageRedDotView()
+//            let nav = BaseNavigationController(rootViewController: shopCar)
+//            vc.present(nav, animated: true, completion: nil)
+//            
+//            return
+//        }
+        
+        selectedIndex = to
+        let items = tabBar.items as! [RAMAnimatedTabBarItem]
+        
+        let fromIV = iconsView[from].icon
+        fromIV.image = UIImage(named: iconsImageName[from])
+        items[from].deselectAnimation(fromIV, textLabel: iconsView[from].textLabel)
+        
+        let toIV = iconsView[to].icon
+        toIV.image = UIImage(named: iconsSelectedImageName[to])
+        items[to].playAnimation(toIV, textLabel: iconsView[to].textLabel)
+    }
+
+    
     
    }
